@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 Welcome #{user.username}
+    a(href="/User/newMessage") Create a new Message.
+    br
+    each data in message
+        h3 #{data.title}
+        p #{data.message}
+        p Written By - #{data.isMember ? data.username : "anonymous"}
+        p Date - #{data.isMember ? data.date: "???"};

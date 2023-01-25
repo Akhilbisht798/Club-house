@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Add A new Message.
+    form(action='/User/newMessage' method='POST')
+        label(for='title') Title
+        input(name='title' placeholder='title' type='text' required='')
+        label(for='message') Message
+        textarea(name='message' rows='4' cols='50')
+        button Add
