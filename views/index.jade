@@ -15,3 +15,6 @@ block content
         p #{data.message}
         p Written By - #{user.isMember ? data.username : "anonymous"}
         p Date - #{user.isMember ? data.date: "???"};
+        if user.admin
+            form(action=`${"User/delete/" + data._id}` method='POST')
+                button(type='submit') Delete

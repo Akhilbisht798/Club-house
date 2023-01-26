@@ -102,5 +102,11 @@ router.post("/member", async (req, res, next) => {
   }
 })
 
+/** Deleting a Message */
+router.post("/delete/:id", async (req, res, next) => {
+  const id = req.params.id;
+  await Message.deleteOne({ "_id": id });
+  res.redirect('/')
+})
 
 module.exports = router;
