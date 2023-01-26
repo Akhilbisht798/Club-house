@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    form(action='/User/member' method='POST')
+      label(for='passcode') Passcode
+      input(name='passcode' placeholder='Passcode' type='number') 
+      button Submit

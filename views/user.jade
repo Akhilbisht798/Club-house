@@ -1,5 +1,11 @@
 extends layout 
 
 block content
-    h1 Hello #{user.Username}
-    h3 Show all User messages.
+    h1 Hello #{user.username}
+    h3 Your Messages
+    br
+    each i in data
+        h3 #{i.title}
+        p #{i.message}
+        p Author #{i.username}
+        p Date #{i.date}

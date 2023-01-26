@@ -60,9 +60,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
+app.use(session({ secret: "cats", resave: true, saveUninitialized: true, cookie: { maxAge: 365 * 24 * 60 * 60 * 1000 } }));
 app.use(passport.initialize());
 app.use(passport.session());
+// req.session.cookie.maxAge = 365 * 24 * 60 * 60 * 1000;
 
 app.use('/', indexRouter);
 app.use('/User', usersRouter);

@@ -4,8 +4,14 @@ block content
     h1 Welcome #{user.username}
     a(href="/User/newMessage") Create a new Message.
     br
+    a(href="/User") Show your Messages.
+    br
+    a(href="/User/member") Become Member.
+    br
+    a(href="/User/admin") Become Admin.
+    br
     each data in message
         h3 #{data.title}
         p #{data.message}
-        p Written By - #{data.isMember ? data.username : "anonymous"}
-        p Date - #{data.isMember ? data.date: "???"};
+        p Written By - #{user.isMember ? data.username : "anonymous"}
+        p Date - #{user.isMember ? data.date: "???"};

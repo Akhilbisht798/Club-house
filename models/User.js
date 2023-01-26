@@ -18,7 +18,8 @@ const User = new Schema({
         validate: [validateEmail, 'Please fill a valid email address'],
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
-    isMember: { type: Boolean, required: true },
+    isMember: { type: Boolean, required: true, default: false },
+    admin: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model("users", User);
